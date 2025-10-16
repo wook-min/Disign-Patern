@@ -5,6 +5,7 @@ public class Golem : Creature
 {
     [SerializeField] private Transform endPositionMinus; // true
     [SerializeField] private Transform endPositionPlus; // false
+    [SerializeField] private Vector3 originPosition;
 
     private bool check;
     private Transform current;
@@ -13,6 +14,7 @@ public class Golem : Creature
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        originPosition = transform.position;
     }
 
     private void OnEnable()
@@ -44,4 +46,9 @@ public class Golem : Creature
             animator.SetInteger("state", 0);
         }
     }
+    /// <sumery>
+    /// 다른 방식
+    /// float offset = Mathf.PingPong(Time.time * speed, targetY);
+    /// transform.position = originPosition + new Vector3(0, offset, 0);
+    /// </sumery>>
 }

@@ -8,6 +8,8 @@ public abstract class Creature : MonoBehaviour
 
     public void Update()
     {
+        if (GameManager.Instance.State == false) return;
+
         Behaviour();
     }
 }

@@ -1,16 +1,28 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private bool state;
+    public bool State => state;
+    [SerializeField] static GameManager instance;
+    public static GameManager Instance => instance;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+
+        state = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnClick()
     {
-        
+        state = !state;
     }
 }

@@ -8,7 +8,6 @@ public class Mushroom : Creature
     private void Start()
     {
         originSize = transform.localScale;
-        maxSize = 3;
     }
 
     public override void Behaviour()
