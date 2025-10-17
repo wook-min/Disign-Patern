@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Singleton Pattern/Scenes/Singleton Scene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/EventBus Pattern/Scenes/Title.unity
+    guid: befabee1e508bc34396b7a37168d3894
+  - enabled: 1
+    path: Assets/EventBus Pattern/Scenes/Game.unity
+    guid: e1f89e00922c8684185c9f0cec938200
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
