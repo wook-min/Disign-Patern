@@ -353,8 +353,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8d301b0ac776934280da3e3ef522fe9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneryManager
-  slider: {fileID: 0}
-  screen: {fileID: 0}
+  slider: {fileID: 672517867}
+  screen: {fileID: 327436113}
 --- !u!4 &546755696
 Transform:
   m_ObjectHideFlags: 0
@@ -907,8 +907,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1628988046}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.025804896, y: -0.000504761, z: 0.000027095803, w: 0.99966687}
+  m_LocalPosition: {x: 1159.5403, y: 851.9978, z: -2230.5715}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1075,11 +1075,11 @@ MonoBehaviour:
       - m_Target: {fileID: 546755695}
         m_TargetAssemblyTypeName: SceneryManager, Assembly-CSharp
         m_MethodName: LoadScene
-        m_Mode: 1
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
