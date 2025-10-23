@@ -2,6 +2,7 @@
 
 public class Publisher : MonoBehaviour
 {
+
     private void Start()
     {
         EventManager.Publish(Condition.START);
