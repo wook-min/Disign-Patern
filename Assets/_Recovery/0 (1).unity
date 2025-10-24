@@ -178,7 +178,7 @@ Transform:
   m_GameObject: {fileID: 574393979}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.009, y: 0.476, z: 2.398}
+  m_LocalPosition: {x: -0.009, y: 0.476, z: 2.2977605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -643,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!33 &4928734007397921244
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -878,13 +878,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7907480438762921083}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.43663645, y: 0.05623545, z: 0.6172584, w: 0.65205693}
+  m_LocalRotation: {x: 0.23911764, y: 0.36964384, z: -0.099045776, w: 0.8923991}
   m_LocalPosition: {x: 1.12, y: 0, z: -0.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 292872508}
-  m_LocalEulerAnglesHint: {x: 30, y: 45, z: 99.526}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7427568561291603091
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -939,14 +939,13 @@ GameObject:
   - component: {fileID: 8556276204787727790}
   - component: {fileID: 6728475405531445965}
   - component: {fileID: 8556276204787727791}
-  - component: {fileID: 8556276204787727792}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8343405264796925561
 Transform:
   m_ObjectHideFlags: 0
@@ -1031,28 +1030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c48a0a0e82f134cb4db7e2cbaab3a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
---- !u!95 &8556276204787727792
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7907480438762921083}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8f1b30d5f81ac96419f0cf7d2b212b1c, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &8662271571928802121
 Transform:
   m_ObjectHideFlags: 0
@@ -1087,7 +1064,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &8821231821366955454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,7 +1117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Grenade
   originalColor: {r: 0, g: 0, b: 0, a: 0}
-  changeCoolTime: 3
 --- !u!1 &8985125009005718396
 GameObject:
   m_ObjectHideFlags: 0

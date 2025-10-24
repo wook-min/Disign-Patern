@@ -2,8 +2,15 @@
 
 public class Knife : Weapon
 {
+    [SerializeField] Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public override void Attack()
     {
-        Debug.Log("Swing Knife");
+        animator.SetTrigger("Attack");
     }
 }
