@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class Grenade : Weapon
 {
-    [SerializeField] private Color originalColor;
+    [SerializeField] private Color changeColor;
     [SerializeField] private float changeCoolTime = 3f;
+
+    // 메테리얼 자체를 두 가지 넣는 방법도 있다.
 
     private Renderer goRenderer;
     private float originR;
@@ -21,17 +23,17 @@ public class Grenade : Weapon
         {
             this.goRenderer = Renderer;
             var mat = goRenderer.material;
-            originalColor = mat.color;
-            originR = originalColor.r;
-            originG = originalColor.g;
-            originB = originalColor.b;
+            changeColor = mat.color;
+            originR = changeColor.r;
+            originG = changeColor.g;
+            originB = changeColor.b;
         }
     }
 
     private void OnDisable()
     {
-        originalColor = new Color(originR, originG, originB);
-        goRenderer.material.color = originalColor;
+        changeColor = new Color(originR, originG, originB);
+        goRenderer.material.color = changeColor;
         changeTrigger = true;
     }
 
@@ -46,6 +48,8 @@ public class Grenade : Weapon
             Debug.Log("Weapon Cooldown Now");
             return;
         }
+
+        // coroutine 변수를 선언 후, 코루틴이 null일때만 코루틴 함수가 실행되게 설정하면 더 깔끔
     }
 
 
@@ -58,8 +62,8 @@ public class Grenade : Weapon
         float newB = Random.Range(0f, 1f);
         float time = 0f;
 
-        originalColor = new Color(newR, newG, newB);
-        goRenderer.material.color = originalColor;
+        changeColor = new Color(newR, newG, newB);
+        goRenderer.material.color = changeColor;
 
         while (!changeTrigger)
         {
@@ -67,8 +71,8 @@ public class Grenade : Weapon
 
             if (time >= changeCoolTime)
             {
-                originalColor = new Color(originR, originG, originB);
-                goRenderer.material.color = originalColor;
+                changeColor = new Color(originR, originG, originB);
+                goRenderer.material.color = changeColor;
                 changeTrigger = true;
                 yield break;
             }
