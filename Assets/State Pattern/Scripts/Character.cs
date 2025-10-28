@@ -16,18 +16,24 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (animator.GetInteger(animationName) == 2)
-            return;
-
-        if(Keyboard.current.spaceKey.IsPressed())
+        if(Keyboard.current.spaceKey.wasPressedThisFrame)
         {
             Attack();
         }
-
     }
 
     public void Attack()
     {
-        animator.SetInteger(animationName, 2);
+        AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (!animator.IsInTransition(0) && !animatorStateInfo.IsName("Attack"))
+        { 
+            animator.SetTrigger("Attack");
+            Debug.Log("Attack");
+        }
+        else
+        {
+            return;
+        }
     }
 }
