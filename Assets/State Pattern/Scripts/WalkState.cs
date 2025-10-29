@@ -5,22 +5,22 @@ public class WalkState : IStateable
 {
     private StateManager character;
     private Animator animator;
-    private Rigidbody rb;
     private float moveSpeed = 5f;
 
     public void OnEnter(Animator animator, StateManager character)
     {
         this.character = character;
         this.animator = animator;
-        rb = character.GetComponent<Rigidbody>();
 
         animator.SetInteger("IntType", 1);
     }
 
     public void OnUpdate()
     {
-        Vector2 input = character.moveAction.ReadValue<Vector2>();
-        Move(input);
+        float h = Input.GetAxisRaw("Horizontal");
+        float v = Input.GetAxisRaw("Vertical");
+
+        Move(new Vector2(h, v));
 
         if (Keyboard.current.spaceKey.isPressed)
         {
@@ -40,10 +40,18 @@ public class WalkState : IStateable
 
     public void Move(Vector2 input)
     {
-        Vector3 dir = new Vector3(input.x, 0, input.y);
+        if (input.sqrMagnitude < 0.001f)
+            return;
 
-        character.transform.rotation = Quaternion.LookRotation(dir.normalized);
+        Transform cam = Camera.main.transform;
+        Vector3 camForward = Vector3.Scale(cam.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 camRight = cam.right;
 
-        rb.MovePosition(character.transform.position + dir * moveSpeed * Time.deltaTime);
+        Vector3 moveDir = (camForward * input.y + camRight * input.x).normalized;
+
+        character.transform.rotation = Quaternion.Slerp
+            (character.transform.rotation, Quaternion.LookRotation(moveDir), 0.15f);
+
+        character.transform.position += moveDir * moveSpeed * Time.deltaTime;
     }
 }

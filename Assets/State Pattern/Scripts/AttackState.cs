@@ -7,26 +7,28 @@ public class AttackState : IStateable
     private Animator animator;
     private AnimatorStateInfo info;
 
+
     public void OnEnter(Animator animator, StateManager character)
     {
         this.character = character;
         this.animator = animator;
 
-        info = this.animator.GetCurrentAnimatorStateInfo(0);
-        if (!animator.IsInTransition(0) && !info.IsName("Attack"))
-        {
-            this.animator.SetTrigger("Attack");
-        }
+        animator.applyRootMotion = false;
+        animator.ResetTrigger("Attack"); // << 이거 넣으니 해결됨. 왜?
+        animator.SetTrigger("Attack");
     }
 
     public void OnExit()
     {
-        
+        animator.SetInteger("IntType", 0);
+        animator.applyRootMotion = true;
     }
 
     public void OnUpdate()
     {
-        if (info.normalizedTime < 0.0001f)
+        info = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (info.IsName("Attack") && !animator.IsInTransition(0))
         {
             character.ChangeState(new IdleState());
         }
