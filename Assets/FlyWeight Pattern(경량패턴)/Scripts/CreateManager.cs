@@ -5,9 +5,9 @@ using UnityEngine.InputSystem;
 public class CreateManager : MonoBehaviour
 {
     [SerializeField] private GameObject prefabs;
-    [SerializeField] private float time = 5.0f;
+    [SerializeField] private float speed = 5f;
 
-    private WaitForSeconds seconds;
+
     private bool trigger = false;
     private int count = 0;
 
@@ -15,7 +15,6 @@ public class CreateManager : MonoBehaviour
     {
         trigger = false;
         count = 0;
-        seconds = new(time);
         StartCoroutine(CreateDelay());
     }
 
@@ -33,12 +32,32 @@ public class CreateManager : MonoBehaviour
             if (trigger)
                 yield break;
 
-            yield return seconds;
+            if (count <= 20)
+            {
+                int randomTime = Random.Range(1, 5);
+                yield return CoroutineManager.GetCachedWait(randomTime);
+            }
+            else if (count <= 40)
+            {
+                int randomTime = Random.Range(1, 3);
+                yield return CoroutineManager.GetCachedWait(randomTime);
+            }
+            else if (count <= 100)
+            {
+                yield return CoroutineManager.GetCachedWait(0.5f);
+            }
+            else
+            {
+                yield return CoroutineManager.GetCachedWait(0.1f);
+            }
 
             var go = Instantiate(prefabs, this.transform);
             go.name = "Bear." + $"{count}";
-            go.transform.position = new Vector3(-5 + count, 0, 0);
+
+            float position = Random.Range(-9f, 9f);
+            go.transform.position = new Vector3(position, 0, 0);
             go.transform.localRotation = new Quaternion(0, 180, 0, 0);
+            go.transform.position -= Vector3.forward * speed * Time.deltaTime;
             Debug.Log("Create Bear");
             count++;
         }
