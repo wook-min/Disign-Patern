@@ -2,12 +2,9 @@
 
 public class Silence : Decorator
 {
-    public Silence(IStatus status) : base(status) { }
 
-    public override void OnUpdate()
+    public override void Activate()
     {
-        base.OnUpdate();
-
-        Debug.Log("Silence State");
+        gameObject.SetActive(false);
     }
 }

@@ -688,8 +688,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -833,11 +833,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 365004741595851365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb2757476cd2344781f29b1eacf7053, type: 3}
+  m_Script: {fileID: 11500000, guid: 7beff96cd15350e46a7a10ebcacb3fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SilenceEffect
---- !u!65 &365004741595851367
-BoxCollider:
+  player: {fileID: 1561566858}
+--- !u!64 &365004741595851367
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -851,39 +852,26 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.5918413, y: 0.5160311, z: 0.7904676}
-  m_Center: {x: -0.04303789, y: 0.257592, z: 0.010345504}
---- !u!54 &365004741595851368
-Rigidbody:
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 77ab059ecff0d6644a3c0f6e5f3df6be, type: 3}
+--- !u!114 &365004741595851368
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365004741595851365}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c96eb7a3ba6076644a74731207a43a2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SilenceZone
+  silence: {fileID: 365004741595851366}
 --- !u!23 &4314671808084991162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -985,11 +973,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 4314671808087245434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34de2d7b322151f4489defc1e78ed1c2, type: 3}
+  m_Script: {fileID: 11500000, guid: e3dcc8748a3eae8428e979f3e51ec45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FearEffect
---- !u!65 &4314671808087245436
-BoxCollider:
+  player: {fileID: 1561566858}
+  fearTime: 3
+  fearSpeed: 1
+  effectCooltime: 5
+  rotationSpeed: 30
+--- !u!64 &4314671808087245436
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1003,39 +996,26 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.8481893, y: 0.63006663, z: 0.045097817}
-  m_Center: {x: 0.00027677423, y: 0.31503332, z: 3.2994052e-11}
---- !u!54 &4314671808087245437
-Rigidbody:
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 3fc0cc681ebf58340985f4579594c1c0, type: 3}
+--- !u!114 &4314671808087245437
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4314671808087245434}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f1b2b083a6cf649b1af94dca78732c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FearZone
+  fear: {fileID: 4314671808087245435}
 --- !u!23 &5846432749145652374
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1137,14 +1117,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 5846432749147906646}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fa958cd5d89f524da1236ed1dd282f9, type: 3}
+  m_Script: {fileID: 11500000, guid: cefdb0424efa9044e8f87f7ea749e0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlowEffect
+  player: {fileID: 1561566858}
   slowTime: 5
   slowAmount: 0.5
   effectCooltime: 5
---- !u!65 &5846432749147946616
-BoxCollider:
+--- !u!64 &5846432749147946616
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1158,39 +1139,26 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
---- !u!54 &5846432749147946617
-Rigidbody:
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 102d2331bbbdb444188d4102b0a645e6, type: 3}
+--- !u!114 &5846432749147946617
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5846432749147906646}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a09ceb93d28729b499917ebd18c1e3eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlowZone
+  slow: {fileID: 5846432749147946615}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class player : MonoBehaviour
+public class player : Debuff
 {
     [Header("캐릭터 이동 관련")]
     [SerializeField] private float speed = 5f; // 이동속도
@@ -13,23 +14,27 @@ public class player : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     
     private RaycastHit rayhit;
+    private bool isControl = true;
 
    // [Header("디버프 관련")]
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        isControl = true;
     }
 
 
 
     private void Update()
     {
-        if (Mouse.current.leftButton.isPressed)
+        if (isControl)
         {
-            ClickCoordinate();
+            if (Mouse.current.leftButton.isPressed)
+            {
+                ClickCoordinate();
+            }
         }
-
     }
 
     private void FixedUpdate()
@@ -87,5 +92,15 @@ public class player : MonoBehaviour
     public void SetSpeed(float newSpeed)
     {
         speed = newSpeed;
+    }
+
+    public void SetControl(bool isControl)
+    {
+        this.isControl = isControl;
+    }
+
+    public override void Activate()
+    {
+        Debug.Log("Character");
     }
 }
