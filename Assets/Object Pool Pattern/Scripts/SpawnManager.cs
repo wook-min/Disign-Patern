@@ -7,33 +7,13 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject prefab;
     [SerializeField] private float radius = 10f; // 원 반지름
     [SerializeField] private GameObject characterPosition;
-    [SerializeField] private int poolCount = 10;
-
-    private static SpawnManager instance;
-    public static SpawnManager Instance => instance;
-
-    private Queue<GameObject> pool = new();
-    
 
     private float randomAngle;
     private WaitForSeconds ws = new(0.5f);
 
     private void Awake()
     {
-        if (instance != null && instance != this)
-            Destroy(gameObject);
-
-        instance = this;
-
-        DontDestroyOnLoad(gameObject);
-
-
-        for (int i = 0; i < poolCount; i++)
-        {
-            var bee = Instantiate(prefab, gameObject.transform);
-            bee.SetActive(false);
-            pool.Enqueue(bee);
-        }
+        
     }
 
     private void Start()
@@ -43,7 +23,7 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnBee()
     {
-        
+
         while (true)
         {
             randomAngle = Random.Range(0f, 360f);
@@ -56,37 +36,15 @@ public class SpawnManager : MonoBehaviour
 
             Quaternion dir = Quaternion.LookRotation(position - characterPosition.transform.position);
 
-            var bee = Get();
-
-            bee.SetActive(true);
-            bee.transform.position = position;
-            bee.transform.rotation = dir;
+            var bee = ObjectPool.Instance.Get(position, dir);
 
             if (bee.TryGetComponent<Bee>(out var Bee))
             {
                 Bee.Init(characterPosition);
             }
+
             yield return ws;
         }
-    }
-
-    public GameObject Get()
-    {
-        if (pool.Count != 0)
-        {
-            return pool.Dequeue();
-        }
-        else
-        {
-            var bee = Instantiate(prefab, gameObject.transform);
-            return bee;
-        }
-    }
-
-    public void ReturnToPool(GameObject go)
-    {
-        pool.Enqueue(go);
-        go.SetActive(false);   
     }
 
 }

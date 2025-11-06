@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Bee : MonoBehaviour
 {
+    // 참고 이동 방법
+    //transform.Translate(direction * speed * Time.deltaTimd, Space.world);
     [SerializeField] private float speed = 5f;
     [SerializeField] private Animator animator;
 
@@ -70,7 +72,7 @@ public class Bee : MonoBehaviour
         yield return ws;
 
         SetMove(false);
-        SpawnManager.Instance.ReturnToPool(gameObject);
+        ObjectPool.Instance.ReturnObject(gameObject);
     }
 
     public void SetMove(bool isOn)
