@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fdc68a0a0311bc7449d196f6d5c462c1
+timeCreated: 1450702449
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/Reflection Probe.prefab
+  uploadId: 266451

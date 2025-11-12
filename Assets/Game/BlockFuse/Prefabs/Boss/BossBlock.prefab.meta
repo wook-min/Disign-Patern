@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 4c4fe6a5953e9a84d90f516ed82067df
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/Boss/BossBlock.prefab
+  uploadId: 266451

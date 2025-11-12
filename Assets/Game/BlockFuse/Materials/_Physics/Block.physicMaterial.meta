@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: e7e59fa2e79cccd4a85a4085920bdb6f
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Materials/_Physics/Block.physicMaterial
+  uploadId: 266451

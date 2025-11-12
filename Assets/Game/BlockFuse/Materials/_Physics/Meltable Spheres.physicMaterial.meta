@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 4d9b671d28e24c141a618bbba3c1b28e
+timeCreated: 1451019713
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Materials/_Physics/Meltable Spheres.physicMaterial
+  uploadId: 266451

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: ad25e3fb2e1e17e448620b79f47c6d9d
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Materials/Destructible.mat
+  uploadId: 266451

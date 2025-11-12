@@ -11,10 +11,6 @@ public class SpawnManager : MonoBehaviour
     private float randomAngle;
     private WaitForSeconds ws = new(0.5f);
 
-    private void Awake()
-    {
-        
-    }
 
     private void Start()
     {

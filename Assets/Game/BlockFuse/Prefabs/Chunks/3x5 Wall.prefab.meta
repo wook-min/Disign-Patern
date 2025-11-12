@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 5b3a82358030f6640a0b41dcc76111fd
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/Chunks/3x5 Wall.prefab
+  uploadId: 266451

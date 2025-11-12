@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ce4888f6701cbc0438caf056f29f857e
+timeCreated: 1451020593
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Materials/HeavyBall.mat
+  uploadId: 266451

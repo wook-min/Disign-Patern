@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 49fdb11a915276a4688a03d69aaca7ca
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/Bomb.prefab
+  uploadId: 266451

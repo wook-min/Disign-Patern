@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 9f9da0a5f36187346b8f965c0f350e29
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/MeltableSphere_LowerEnd.prefab
+  uploadId: 266451

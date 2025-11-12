@@ -19,6 +19,7 @@ public class Bee : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        // GameObject.Find("Sand Pillar").transform; 도 가능
     }
 
     private void OnEnable()

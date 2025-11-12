@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 331ed74226c67be4ca746ca1de62a513
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/Block_MainMenu.prefab
+  uploadId: 266451

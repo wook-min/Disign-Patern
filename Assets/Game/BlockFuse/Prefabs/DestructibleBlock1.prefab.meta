@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: d180c4577dd169a4e972c3b06bc9b1d7
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Prefabs/DestructibleBlock1.prefab
+  uploadId: 266451

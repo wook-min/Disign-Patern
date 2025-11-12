@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 29ae6ef1b19f2424dbfd4e7f10785364
+NativeFormatImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 681
+  packageName: Block Fuse
+  packageVersion: 2.0.2
+  assetPath: Assets/BlockFuse/Materials/MeltableSphere.mat
+  uploadId: 266451
